@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+  
+    <title>RealEstate</title>
+
+    <!-- Styles -->
+    <link href="assets/css/app.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,300,400,500,600,800%7COpen+Sans:300,400,500,600,700,800%7CMontserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="assets/img/r.png">
+  </head>
+
+  <body class="nav-on-header smart-nav">
+
+    <!-- Navigation bar -->
+    <nav class="navbar">
+      <div class="container">
+
+        <!-- Logo -->
+        <div class="pull-left">
+          <a class="navbar-toggle" href="#" data-toggle="offcanvas"><i class="ti-menu"></i></a>
+
+          <div class="logo-wrapper">
+            <a class="logo" href="index.html"><img src="assets/img/real-estate-logo.png" alt="logo"></a>
+            <a class="logo-alt" href="index.html"><img src="assets/img/real-estate-logo.png" alt="logo-alt"></a>
+          </div>
+
+        </div>
+        <!-- END Logo -->
+
+        <!-- User account -->
+        <div class="pull-right user-login">
+          <a class="btn btn-sm btn-primary" href="user-login.html">Login</a> or <a href="user-register.html">register</a>
+        </div>
+        <!-- END User account -->
+
+        <!-- Navigation menu -->
+        <ul class="nav-menu">
+          <li>
+            <a class="active" href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="#">Become a host</a>
+          </li>
+          <li>
+            <a href="#">Earn credit</a>
+          </li>
+          <li>
+            <a href="#">Help</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+        </ul>
+        <!-- END Navigation menu -->
+
+      </div>
+    </nav>
+    <!-- END Navigation bar -->
+
+      </div>
+    </nav>
+    <!-- Page header -->
+    <header class="page-header bg-img size-lg" style="background-image: url(assets/img/home-logo1.jpg)">
+      <div class="container">
+        <div class="header-detail">
+          <div class="hgroup">
+            <h1 class="title"></h1>
+            <h3>
+                <a href="#" class="type"> 
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span> 
+                </a>
+            </h3>
+          </div>
+          <hr>
+          <ul class="details cols-3">
+            <li style="display: flex;">
+              <i class="fa fa-map-marker" style="padding-top: 9px;"></i>
+              <span class="location" style="white-space: nowrap; text-overflow: ellipsis;overflow: hidden;display: block; width: 213px;">
+                <!-- -->
+              </span>
+            </li>
+
+            <li>
+              <i class="fa fa-users"></i>
+              <span class="maxGuests"></span>
+            </li>
+
+            <li>
+              <i class="fa fa-money"></i>
+              <span class="price"></span>
+            </li>
+
+            <li>
+              <i class="fa fa-key"></i>
+              <span class="bedrooms"></span>
+            </li>
+
+            <li>
+              <i class="fa fa-bed"></i>
+              <span class="beds"></span>
+            </li>
+
+            <li>
+              <i class="fa fa-bath"></i>
+              <span class="bathrooms"></span>
+            </li>
+          </ul>
+          <div class="row">
+            <div class="col-md-8 amenities">
+              <p class="lead">
+                <ul>
+                  <li class="description"></li>
+                </ul>
+              </p>
+              <hr>
+              <h6>Amenities</h6>
+            <!--
+              <p><i class="fa fa-check-square-o" aria-hidden="true"></i> WiFi</p>
+              <p><i class="fa fa-check-square-o" aria-hidden="true"></i> Swimming Pool</p>
+              <p><i class="fa fa-check-square-o" aria-hidden="true"></i> Laundry</p>
+              <p><i class="fa fa-check-square-o" aria-hidden="true"></i> Air Conditioning</p>
+              <p><i class="fa fa-check-square-o" aria-hidden="true"></i> TV Cable</p> {% endcomment %}
+            -->
+            </div>
+            <div class="col-md-4 borderblack">
+              <!-- $ -->
+              <h4 class="pricetotal"></h4>
+
+              <!-- END $ -->
+
+              <!-- Datepicker --> 
+              <p>Dates</p>
+              <div class="form-group">
+                 <div class="input-group date" data-provide="datepicker">
+                    <input id="datepicker" type="text" class="form-control checkin" placeholder="Check in">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+              </div>
+              <div class="form-group">
+                 <div class="input-group date" data-provide="datepicker">
+                    <input type="text" class="form-control checkout" placeholder="Check out">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+              </div>
+              <!-- END Datepicker -->  
+              <p>Guests</p>
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="fa fa-male" aria-hidden="true"></i>
+                </span>
+                <input type="text" class="form-control" placeholder="Guests">
+              </div>
+              <!-- Button Book-->
+              <hr>   
+              <div class="text-center">       
+                <div class="action-buttons">
+                <a class="btn btn-success editbook" href="">Book</a>
+                </div>
+              </div> 
+            </div>  
+          </div>
+
+          <div class="button-group">
+            <ul class="social-icons">
+              <li class="title">Share on</li>
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-instagram"></i></a></li>
+              </ul>
+
+          </div>
+
+        </div>
+      </div>
+    </header>
+    <!-- END Page header -->
+    
+    <!-- Carousel Image -->
+   
+   
+    <!-- END Carousel Image -->
+
+
+    <!-- Map -->
+
+    <div class="container">
+          <div id="contact-map" style="height: 500px"></div>    
+    </div>  
+
+    <!-- END Map -->
+
+    <!-- Comments -->
+    <main class="container blog-page">
+      <div class="row">
+          <article class="post">
+            <div id="comments">
+              <header>
+                <h3>Comments <span class="txt-gray">(5)</span></h3>
+              </header>
+
+              <ul class="comments-list">
+                <li class="comment">
+                  <img class="avatar" src="assets/img/avatar-1.jpg" alt="...">
+                  <div class="comment-body">
+                    <a class="reply-link" href="#">Reply</a>
+                    <h6><a href="#">Damian</a> <time>June 2017</time></h6>
+                    <p>Really awesome place - I stayed in 3 different AirBnBs during a 2 week London trip and this was probably my favorite. The apartment itself is great - beautiful finishes, well appointed kitchen and bathroom, washer, great linens & towels, etc. The large swinging windows in both the bed and living room evoke an outdoor terrace feel, which makes the space feel even better. The building is beautiful and well located - your steps away from London Fields and Broadway market, definitely go there if you're staying on Saturday. Just downstairs you have several restaurants and there are plenty more very close by. Easy access to the London Overground at Hackney Central. Overall great experience and I definitely recommend</p>
+                  </div>
+
+                <li class="comment">
+                  <img class="avatar" src="assets/img/avatar-2.jpg" alt="...">
+                  <div class="comment-body">
+                    <a class="reply-link" href="#">Reply</a>
+                    <h6><a href="#">Margaret</a> <time>December 2016</time></h6>
+                    <p>My family was supposed to stay with another host that fell through, and Hugh came to our rescue by getting this place ready for us in a matter of hours. It was very clean and comfortable for the three of us, with lovely bath and shower products. If you are looking for a reliable host in London, I would definitely recommend a stay with Hugh!</p>
+                  </div>
+                </li>
+
+                <li class="comment">
+                  <img class="avatar" src="assets/img/avatar-3.jpg" alt="...">
+                  <div class="comment-body">
+                    <a class="reply-link" href="#">Reply</a>
+                    <h6><a href="#">Jenna</a> <time>June 2016</time></h6>
+                    <p>Hugh made the entry instructions very easy to understand. The apartment was immaculate and fully stocked with all of the basic needs. I loved the location, and it was very easy to commute to Westminster to see the sights. I would definitely stay here again!</p>
+                  </div>
+                </li>
+
+                 <li class="comment">
+                  <img class="avatar" src="assets/img/avatar-4.jpg" alt="...">
+                  <div class="comment-body">
+                    <a class="reply-link" href="#">Reply</a>
+                    <h6><a href="#">Jamtege</a> <time>April 2016</time></h6>
+                    <p>Utterly amazing apartment! I didn't want to leave! The location is just right - so so close to everything to explore Hackney. Spacious for a one bedroom flat, Hugh was considerate of guests by leaving plenty of space in cupboards, everything well explained for guests use. Thoughtful additions for guests like toothbrush and other products that came in very handy! A house manual with recommendations was provided and very quick and professional communication. Loved it!</p>
+                  </div>
+                </li>
+
+                 <li class="comment">
+                  <img class="avatar" src="assets/img/avatar-5.jpg" alt="...">
+                  <div class="comment-body">
+                    <a class="reply-link" href="#">Reply</a>
+                    <h6><a href="#">Adam</a> <time>June 2018</time></h6>
+                    <p>Hugh and team we’re great through the stay including when keys went missing on a night out. Excellent amenities including little touches, (converter plugs toiletries, fan and loads more!) Great location to explore Hackney area. This might be slightly more expensive than some other local areas but you get what you pay for and as an East Londoner you cant beat the location!</p>
+                  </div>
+                </li>
+              </ul>
+              <nav class="text-center">
+                <ul class="pagination">
+                  <li>
+                    <a href="#" aria-label="Previous">
+                      <i class="ti-angle-left"></i>
+                    </a>
+                  </li>
+                  <li class="active"><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li>
+                    <a href="#" aria-label="Next">
+                      <i class="ti-angle-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+              <hr>
+            </div>
+            
+          </article>
+
+        </div>
+        
+      </div>
+
+    </main>   
+    <!-- END Comments -->
+   
+    <!-- Site footer -->
+    <footer class="site-footer">
+
+      <!-- Top section -->
+      <div class="container">
+        <div class="row">
+         <div class="col-xs-6 col-md-3">
+            <h6>RealEstate</h6>
+            <ul class="footer-links">
+              <li><a href="page-about.html">Careers</a></li>
+              <li><a href="page-typography.html">Press</a></li>
+              <li><a href="page-faq.html">Policies</a></li>
+              <li><a href="page-typography.html">Help</a></li>
+              <li><a href="page-contact.html">Diversity & Belonging</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Discover</h6>
+            <ul class="footer-links">
+              <li><a href="job-list.html">Trust & Safety</a></li>
+              <li><a href="job-list.html">Travel Credit</a></li>
+              <li><a href="job-list.html">Gift Cards</a></li>
+              <li><a href="job-list.html">Business Travel</a></li>
+              <li><a href="job-list.html">Guidebooks</a></li>
+              <li><a href="job-list.html">Events</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Hosting</h6>
+            <ul class="footer-links">
+              <li><a href="page-about.html">Why Host</a></li>
+              <li><a href="page-typography.html">Hospitality</a></li>
+              <li><a href="page-faq.html">Responsible Hosting</a></li>
+              <li><a href="page-typography.html">Community Center</a></li>
+              <li><a href="page-contact.html">Host an Experience</a></li>
+              <li><a href="page-contact.html">Open Homes</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <hr>
+      </div>
+      <!-- END Top section -->
+
+      <!-- Bottom section -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">© RealEstate, Inc.</p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- END Bottom section -->
+
+    </footer>
+    <!-- END Site footer -->
+
+
+    <!-- Back to top button -->
+    <a id="scroll-up" href="#"><i class="ti-angle-up"></i></a>
+    <!-- END Back to top button -->
+
+    <!-- Scripts -->
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/home-detail.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+  </body>
+</html>
+

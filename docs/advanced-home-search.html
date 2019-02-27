@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+  
+    <title>RealEstate</title>
+
+    <!-- Styles -->
+    <link href="assets/css/app.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,300,400,500,600,800%7COpen+Sans:300,400,500,600,700,800%7CMontserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="assets/img/r.png">
+  </head>
+
+  <body class="nav-on-header smart-nav">
+
+    <!-- Navigation bar -->
+    <nav class="navbar">
+      <div class="container">
+
+        <!-- Logo -->
+        <div class="pull-left">
+          <a class="navbar-toggle" href="#" data-toggle="offcanvas"><i class="ti-menu"></i></a>
+
+          <div class="logo-wrapper">
+            <a class="logo" href="index.html"><img src="assets/img/real-estate-logo.png" alt="logo"></a>
+            <a class="logo-alt" href="index.html"><img src="assets/img/real-estate-logo.png" alt="logo-alt"></a>
+          </div>
+
+        </div>
+        <!-- END Logo -->
+
+        <!-- User account -->
+        <div class="pull-right user-login">
+          <a class="btn btn-sm btn-primary" href="user-login.html">Login</a> or <a href="user-register.html">register</a>
+        </div>
+        <!-- END User account -->
+
+                <!-- Navigation menu -->
+        <ul class="nav-menu">
+          <li>
+            <a class="active" href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="#">Become a host</a>
+          </li>
+          <li>
+            <a href="#">Earn credit</a>
+          </li>
+          <li>
+            <a href="#">Help</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+        </ul>
+        <!-- END Navigation menu -->
+
+      </div>
+    </nav>
+    <!-- END Navigation bar -->
+
+
+    <!-- Page header -->
+    <header class="page-header bg-img" style="background-image: url(assets/img/bg-banner1.jpg);">
+      <div class="container page-name">
+        <h1 class="text-center">Advanced Home Search</h1>
+        <p class="lead text-center">Use following search box to find homes that fits you better</p>
+      </div>
+
+      <div class="container">
+        <form action="#">
+
+          <div class="row">
+            <div class="form-group col-xs-12 col-sm-6">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="fa fa-globe" aria-hidden="true"></i>
+                </span>
+                <input type="text" class="form-control" placeholder="Where">
+               </div>
+            </div>
+
+            <div class="form-group col-xs-12 col-sm-6">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="fa fa-male" aria-hidden="true"></i>
+                </span>
+                <input type="text" class="form-control" placeholder="Guests">
+               </div>
+            </div>
+
+            <div class="form-group col-xs-12 col-sm-6">
+              <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Min price">
+                <span class="input-group-addon">.00</span>
+               </div>
+            </div>
+
+            <div class="form-group col-xs-12 col-sm-6">
+              <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar) " placeholder="Max price">
+                <span class="input-group-addon">.00</span>
+                </div>
+            </div>
+
+            <div class="form-group col-xs-12 col-sm-12">
+             <h6>Negotiation</h6>
+              <div class="form-group col-xs-12 col-sm-4">
+                  <div class="checkbox">
+                    <input type="checkbox" id="type1" name="contract">
+                    <label for="type1">Yes</label>
+                  </div>
+              </div>  
+              <div class="form-group col-xs-12 col-sm-4">
+                  <div class="checkbox">
+                    <input type="checkbox" id="type2" name="contract">
+                    <label for="type2">No</label>
+                  </div>
+              </div>   
+            </div> 
+
+             <div class="form-group col-xs-12 col-sm-12">
+             <h6>Home type</h6>
+              <div class="form-group col-xs-12 col-sm-4">
+                  <div class="checkbox">
+                    <input type="checkbox" id="hometype1" name="contract">
+                    <label for="hometype1">Entire place
+                     <small>(Have a place to yourself)</small> 
+                     </label>
+                  </div>
+              </div>  
+              <div class="form-group col-xs-12 col-sm-4">
+                  <div class="checkbox">
+                    <input type="checkbox" id="hometype2" name="contract">
+                    <label for="hometype2">Private room
+                     <small>(Have your own room and share some common spaces)</small> 
+                     </label>
+                  </div>
+              </div>   
+              <div class="form-group col-xs-12 col-sm-4">
+                  <div class="checkbox">
+                    <input type="checkbox" id="hometype3" name="contract">
+                    <label for="hometype3">
+                      Hotel room 
+                      <small>(Have a private or shared room in a boutique hotel, hostel, and more)</small> 
+                    </label>
+                  </div>
+              </div>   
+            </div> 
+
+          
+            <div class="form-group col-xs-12 col-sm-4">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-bed" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" placeholder="Beds">
+               </div>
+            </div>
+
+            <div class="form-group col-xs-12 col-sm-4">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-bath" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" placeholder="Baths">
+               </div>
+            </div>
+
+            <div class="form-group col-xs-12 col-sm-4">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-star" aria-hidden="true"></i></span>
+               <div class="form-group">
+                <select class="form-control">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+            </div> 
+            </div> 
+
+            <!-- Datepicker --> 
+            <div class="form-group col-xs-12 col-sm-6">
+               <div class="input-group date" data-provide="datepicker">
+                  <input type="text" class="form-control" placeholder="Check in">
+                  <div class="input-group-addon">
+                      <span class="glyphicon glyphicon-th"></span>
+                  </div>
+              </div>
+            </div>
+            <div class="form-group col-xs-12 col-sm-6">
+               <div class="input-group date" data-provide="datepicker">
+                  <input type="text" class="form-control" placeholder="Check out">
+                  <div class="input-group-addon">
+                      <span class="glyphicon glyphicon-th"></span>
+                  </div>
+              </div>
+            </div>
+            <!-- END Datepicker --> 
+
+
+            <div class="form-group col-xs-12 col-sm-12">
+              <h6>Other Features</h6>
+              <div class="checkall-group">
+                <div class="checkbox">
+                  <input type="checkbox" id="contract1" name="contract" checked>
+                  <label for="contract1">All types</label>
+                </div>
+            <div class="form-group col-xs-12 col-sm-4">
+                <div class="checkbox">
+                  <input type="checkbox" id="contract2" name="contract">
+                  <label for="contract2">WiFi</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" id="contract3" name="contract">
+                  <label for="contract3">Air Conditioning</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" id="contract4" name="contract">
+                  <label for="contract4">Central Heating</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" id="contract5" name="contract">
+                  <label for="contract5">Electric Range</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" id="contract6" name="contract">
+                  <label for="contract6">Fire Alarm</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" id="contract7" name="contract">
+                  <label for="contract7">Gym</label>
+                </div>
+            </div>
+            <div class="form-group col-xs-12 col-sm-4">
+                <div class="checkbox">
+                  <input type="checkbox" id="contract8" name="contract">
+                  <label for="contract8">Home Theater</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" id="contract9" name="contract">
+                  <label for="contract9">Laundry</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" id="contract10" name="contract">
+                  <label for="contract10">Marble Floors</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" id="contract11" name="contract">
+                  <label for="contract11">Microwave</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" id="contract12" name="contract">
+                  <label for="contract12">Refrigerator</label>
+                </div>
+            </div>
+            <div class="form-group col-xs-12 col-sm-4">
+                <div class="checkbox">
+                  <input type="checkbox" id="contract13" name="contract">
+                  <label for="contract13">Central Heating</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" id="contract14" name="contract">
+                  <label for="contract14">Sauna</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" id="contract15" name="contract">
+                  <label for="contract15">Swimming Pool</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" id="contract16" name="contract">
+                  <label for="contract16">TV Cable</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" id="contract17" name="contract">
+                  <label for="contract17">Washer</label>
+                </div>
+            </div>
+          </div>
+          <div class="button-group">
+            <div class="action-buttons">
+              <!-- <button class="btn btn-primary">Apply filter</button> -->
+              <input class="btn btn-primary" type="button" value="Apply filter" onclick="window.location.href='home-list.html'" />
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+
+    </header>
+    <!-- END Page header -->
+
+    <!-- Site footer -->
+    <footer class="site-footer">
+
+      <!-- Top section -->
+      <div class="container">
+        <div class="row">
+         <div class="col-xs-6 col-md-3">
+            <h6>RealEstate</h6>
+            <ul class="footer-links">
+              <li><a href="page-about.html">Careers</a></li>
+              <li><a href="page-typography.html">Press</a></li>
+              <li><a href="page-faq.html">Policies</a></li>
+              <li><a href="page-typography.html">Help</a></li>
+              <li><a href="page-contact.html">Diversity & Belonging</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Discover</h6>
+            <ul class="footer-links">
+              <li><a href="job-list.html">Trust & Safety</a></li>
+              <li><a href="job-list.html">Travel Credit</a></li>
+              <li><a href="job-list.html">Gift Cards</a></li>
+              <li><a href="job-list.html">Business Travel</a></li>
+              <li><a href="job-list.html">Guidebooks</a></li>
+              <li><a href="job-list.html">Events</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Hosting</h6>
+            <ul class="footer-links">
+              <li><a href="page-about.html">Why Host</a></li>
+              <li><a href="page-typography.html">Hospitality</a></li>
+              <li><a href="page-faq.html">Responsible Hosting</a></li>
+              <li><a href="page-typography.html">Community Center</a></li>
+              <li><a href="page-contact.html">Host an Experience</a></li>
+              <li><a href="page-contact.html">Open Homes</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <hr>
+      </div>
+      <!-- END Top section -->
+
+      <!-- Bottom section -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">© RealEstate, Inc.</p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- END Bottom section -->
+
+    </footer>
+    <!-- END Site footer -->
+
+
+    <!-- Back to top button -->
+    <a id="scroll-up" href="#"><i class="ti-angle-up"></i></a>
+    <!-- END Back to top button -->
+
+    <!-- Scripts -->
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>

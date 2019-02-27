@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+   
+    <title>RealEstate</title>
+
+    <!-- Styles -->
+    <link href="assets/css/app.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,300,400,500,600,800%7COpen+Sans:300,400,500,600,700,800%7CMontserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="assets/img/r.png">
+  </head>
+
+  <body class="nav-on-header smart-nav">
+
+    <!-- Navigation bar -->
+    <nav class="navbar">
+      <div class="container">
+
+        <!-- Logo -->
+        <div class="pull-left">
+          <a class="navbar-toggle" href="#" data-toggle="offcanvas"><i class="ti-menu"></i></a>
+
+          <div class="logo-wrapper">
+            <a class="logo" href="index.html"><img src="assets/img/real-estate-logo.png" alt="logo"></a>
+            <a class="logo-alt" href="index.html"><img src="assets/img/real-estate-logo.png" alt="logo-alt"></a>
+          </div>
+
+        </div>
+        <!-- END Logo -->
+
+        <!-- User account -->
+        <div class="pull-right user-login">
+          <a class="btn btn-sm btn-primary" href="user-login.html">Login</a> or <a href="user-register.html">register</a>
+        </div>
+        <!-- END User account -->
+
+        <!-- Navigation menu -->
+        <ul class="nav-menu">
+          <li>
+            <a class="active" href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="become-a-host.html">Become a host</a>
+          </li>
+          <li>
+            <a href="#">Earn credit</a>
+          </li>
+          <li>
+            <a href="#">Help</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+        </ul>
+        <!-- END Navigation menu -->
+
+      </div>
+    </nav>
+    <!-- END Navigation bar -->
+
+
+    <!-- Page header -->
+    <header class="page-header bg-img" style="background-image: url(assets/img/bg-banner1.jpg);">
+      
+      <div class="container">
+        <p class="lead text-center">Use the Instant Book filter to see homes you can book right now</p>
+        <form class="header-job-search">
+            <div class="input-keyword">
+              <input type="text" class="form-control fix" placeholder="Try 'Homes in Ho Chi Minh City' ">
+            </div>
+        </form>
+      </div>
+
+    </header>
+    <!-- END Page header -->
+
+
+    <!-- Main container -->
+    <main>
+      <section class="no-padding-top bg-alt">
+        <div class="container">
+          <div class="row">
+
+            <!-- Advanced home -->  
+            <div class="col-xs-4">
+              <h5 class="text-center"><strong>Search</strong></h5>
+              <div class="col-md-12 borderblack">
+              <!-- Datepicker --> 
+              <p>Dates</p>
+              <div class="form-group">
+                 <div class="input-group date" data-provide="datepicker">
+                    <input type="text" class="form-control" placeholder="Check in">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+              </div>
+              <div class="form-group">
+                 <div class="input-group date" data-provide="datepicker">
+                    <input type="text" class="form-control" placeholder="Check out">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+              </div>
+              <!-- END Datepicker -->  
+              <p>Guests</p>
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="fa fa-male" aria-hidden="true"></i>
+                </span>
+                <input type="text" class="form-control" placeholder="Guests">
+              </div>
+              <!-- Button Book-->
+              <hr>   
+              <div class="text-center">       
+                <div class="action-buttons">
+                <a class="btn btn-success editbook2" href="">Apply filter</a>
+                </div>
+              </div> 
+            </div> 
+
+            </div>
+            <!-- END Advanced home -->
+
+            <!-- Home detail -->
+            <div class="col-xs-8">
+              <h5>We found <strong>300+</strong> homes in Ho Chi Minh City</h5>
+              
+              <!-- Home 1 -->
+              <a class="item-block" href="#">
+                <header class="fixhd" style="padding-right: 15px;padding-left: 10px;height: 235px;">
+                  <div class="col-xs-4">
+                    <img style="height: 120px;width: 200px;"  src="assets/img/home-logo1.jpg" alt="">
+                  </div>
+                  <div class="col-xs-8">
+                   <div class="hgroup fixhg"> 
+                    <span style="color: rgb(83, 18, 16);">Entire apartment</span>
+                    <span class="open-position"><h4 style="color: #3F9D67;"><strong>40$</strong> per night</h4></span>
+                    <h4>House in countryside (30 km dal mare)</h4>
+                    <div class="col-xs-6 cx6fix">
+                      <h5>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                      </h5>
+                      <div style="color: #8A8A8A;">16 guests<span> · </span>Bathroom Private<span> · </span>8 beds<span> · </span>2 baths<span> · </span>Wifi<span> · </span>Kitchen<span> · </span>Washer</div>
+                    </div>
+                    <div class="col-xs-6 cx6fix">
+                      <div class="header-meta">
+                        <span class="location">Ho Chi Minh, Viet Nam</span>
+                        <span class="label label-warning">no negotiate</span>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </header>
+              </a>
+              <!-- END Home 1 -->
+              <!-- Home 2 -->
+              <a class="item-block" href="#">
+                <header class="fixhd" style="padding-right: 15px;padding-left: 10px;height: 215px;">
+                  <div class="col-xs-4">
+                    <img style="height: 120px;width: 200px;"  src="assets/img/home-list2.jpg" alt="">
+                  </div>
+                  <div class="col-xs-8">
+                   <div class="hgroup fixhg"> 
+                    <span style="color: rgb(83, 18, 16);">Entire apartment</span>
+                    <span class="open-position"><h4 style="color: #3F9D67;"><strong>11$</strong> per night</h4></span>
+                    <h4>Local neighborhood - Modern studio ♥ of the city 1</h4>
+                    <div class="col-xs-6 cx6fix">
+                      <h5>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                      </h5>
+                      <div style="color: #8A8A8A;">2 guests<span> · </span>Studio<span> · </span>1 bed<span> · </span>1 bath<span> · </span>Wifi<span> · </span>Kitchen<span> · </span>Washer</div>
+                    </div>
+                    <div class="col-xs-6 cx6fix">
+                      <div class="header-meta">
+                        <span class="location">Ho Chi Minh, Viet Nam</span>
+                        <span class="label label-danger">negotiate</span>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </header>
+              </a>
+              <!-- END Home 2 -->
+              <!-- Home 3 -->
+              <a class="item-block" href="#">
+                <header class="fixhd" style="padding-right: 15px;padding-left: 10px;height: 215px;">
+                  <div class="col-xs-4">
+                    <img style="height: 120px;width: 200px;"  src="assets/img/home-list3.jpg" alt="">
+                  </div>
+                  <div class="col-xs-8">
+                   <div class="hgroup fixhg"> 
+                    <span style="color: rgb(83, 18, 16);">Shared room in apartment</span>
+                    <span class="open-position"><h4 style="color: #3F9D67;"><strong>16$</strong> per night</h4></span>
+                    <h4>Onetel Saigon Hostel ★RooFToP DecK CiTy ViEw★</h4>
+                    <div class="col-xs-6 cx6fix">
+                      <h5>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                      </h5>
+                      <div style="color: #8A8A8A;">8 guests<span> · </span>1 bedroom<span> · </span>8 beds<span> · </span>Wifi<span> · </span>Kitchen<span> · </span>Washer</div>
+                    </div>
+                    <div class="col-xs-6 cx6fix">
+                      <div class="header-meta">
+                        <span class="location">Ho Chi Minh, Viet Nam</span>
+                        <span class="label label-warning">no negotiate</span>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </header>
+              </a>
+              <!-- END Home 3 -->
+              <!-- Home 4 -->
+              <a class="item-block" href="#">
+                <header class="fixhd" style="padding-right: 15px;padding-left: 10px;height: 235px;">
+                  <div class="col-xs-4">
+                    <img style="height: 120px;width: 200px;"  src="assets/img/home-list4.jpg" alt="">
+                  </div>
+                  <div class="col-xs-8">
+                   <div class="hgroup fixhg"> 
+                    <span style="color: rgb(83, 18, 16);">Private room in apartment</span>
+                    <span class="open-position"><h4 style="color: #3F9D67;"><strong>12$</strong> per night</h4></span>
+                    <h4>**BC Cozy Brand new 1BR Apt in city center</h4>
+                    <div class="col-xs-6 cx6fix">
+                      <h5>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                      </h5>
+                      <div style="color: #8A8A8A;">2 guests<span> · </span>1 bedroom<span> · </span>1 bed<span> · </span>1 private bath<span> · </span>Wifi<span> · </span>Kitchen<span> · </span>Washer</div>
+                    </div>
+                    <div class="col-xs-6 cx6fix">
+                      <div class="header-meta">
+                        <span class="location">Ho Chi Minh, Viet Nam</span>
+                        <span class="label label-warning">no negotiate</span>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </header>
+              </a>
+              <!-- END Home 4 -->
+              <!-- Home 5 -->
+              <a class="item-block" href="#">
+                <header class="fixhd" style="padding-right: 15px;padding-left: 10px;height: 215px;">
+                  <div class="col-xs-4">
+                    <img style="height: 120px;width: 200px;"  src="assets/img/home-list5.jpg" alt="">
+                  </div>
+                  <div class="col-xs-8">
+                   <div class="hgroup fixhg"> 
+                    <span style="color: rgb(83, 18, 16);">Entire house</span>
+                    <span class="open-position"><h4 style="color: #3F9D67;"><strong>31$</strong> per night</h4></span>
+                    <h4>District 1 -Funky architect home</h4>
+                    <div class="col-xs-6 cx6fix">
+                      <h5>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                      </h5>
+                      <div style="color: #8A8A8A;">4 guests<span> · </span>2 bedroom<span> · </span>2 beds<span> · </span>Wifi<span> · </span>Kitchen<span> · </span>Washer</div>
+                    </div>
+                    <div class="col-xs-6 cx6fix">
+                      <div class="header-meta">
+                        <span class="location">Ho Chi Minh, Viet Nam</span>
+                        <span class="label label-danger">negotiate</span>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </header>
+              </a>
+              <!-- END Home 5 -->
+            </div>
+            <!-- END home detail -->
+
+
+
+            <!-- Page navigation -->
+            <nav class="text-center">
+              <ul class="pagination">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <i class="ti-angle-left"></i>
+                  </a>
+                </li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <i class="ti-angle-right"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <!-- END Page navigation -->
+
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- END Main container -->
+
+
+      <!-- Newsletter -->
+      <section class="bg-img text-center" style="background-image: url(assets/img/bg-facts.jpg)">
+        <div class="container">
+          <h2><strong>Subscribe</strong></h2>
+          <h6 class="font-alt">Get information on weekly sale deals to your inbox</h6>
+          <br><br>
+          <form class="form-subscribe" action="#">
+            <div class="input-group">
+              <input type="text" class="form-control input-lg" placeholder="Your eamil address">
+              <span class="input-group-btn">
+                <button class="btn btn-success btn-lg" type="submit">Subscribe</button>
+              </span>
+            </div>
+          </form>
+        </div>
+      </section>
+      <!-- END Newsletter -->
+
+
+    </main>
+    <!-- END Main container -->
+
+
+    <!-- Site footer -->
+    <footer class="site-footer">
+
+      <!-- Top section -->
+      <div class="container">
+        <div class="row">
+         <div class="col-xs-6 col-md-3">
+            <h6>RealEstate</h6>
+            <ul class="footer-links">
+              <li><a href="page-about.html">Careers</a></li>
+              <li><a href="page-typography.html">Press</a></li>
+              <li><a href="page-faq.html">Policies</a></li>
+              <li><a href="page-typography.html">Help</a></li>
+              <li><a href="page-contact.html">Diversity & Belonging</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Discover</h6>
+            <ul class="footer-links">
+              <li><a href="home-list.html">Trust & Safety</a></li>
+              <li><a href="home-list.html">Travel Credit</a></li>
+              <li><a href="home-list.html">Gift Cards</a></li>
+              <li><a href="home-list.html">Business Travel</a></li>
+              <li><a href="home-list.html">Guidebooks</a></li>
+              <li><a href="home-list.html">Events</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Hosting</h6>
+            <ul class="footer-links">
+              <li><a href="page-about.html">Why Host</a></li>
+              <li><a href="page-typography.html">Hospitality</a></li>
+              <li><a href="page-faq.html">Responsible Hosting</a></li>
+              <li><a href="page-typography.html">Community Center</a></li>
+              <li><a href="page-contact.html">Host an Experience</a></li>
+              <li><a href="page-contact.html">Open Homes</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <hr>
+      </div>
+      <!-- END Top section -->
+
+      <!-- Bottom section -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">© RealEstate, Inc.</p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- END Bottom section -->
+
+    </footer>
+    <!-- END Site footer -->
+
+
+    <!-- Back to top button -->
+    <a id="scroll-up" href="#"><i class="ti-angle-up"></i></a>
+    <!-- END Back to top button -->
+
+    <!-- Scripts -->
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+  </body>
+</html>

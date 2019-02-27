@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <title>RealEstate</title>
+
+    <!-- Styles -->
+    <link href="assets/css/app.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,300,400,500,600,800%7COpen+Sans:300,400,500,600,700,800%7CMontserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="assets/img/r.png">
+  </head>
+
+  <body class="nav-on-header smart-nav">
+
+    <!-- Navigation bar -->
+    <nav class="navbar">
+      <div class="container">
+
+        <!-- Logo -->
+        <div class="pull-left">
+          <a class="navbar-toggle" href="#" data-toggle="offcanvas"><i class="ti-menu"></i></a>
+
+          <div class="logo-wrapper">
+            <a class="logo" href="index.html"><img src="assets/img/real-estate-logo.png" alt="logo"></a>
+            <a class="logo-alt" href="index.html"><img src="assets/img/real-estate-logo.png" alt="logo-alt"></a>
+          </div>
+
+        </div>
+        <!-- END Logo -->
+
+        <!-- User account -->
+        <div class="pull-right user-login">
+          <a class="btn btn-sm btn-primary" href="user-login.html">Login</a> or <a href="user-register.html">register</a>
+        </div>
+        <!-- END User account -->
+
+        <!-- Navigation menu -->
+        <ul class="nav-menu">
+          <li>
+            <a class="active" href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="become-a-host.html">Become a host</a>
+          </li>
+          <li>
+            <a href="#">Earn credit</a>
+          </li>
+          <li>
+            <a href="#">Help</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+        </ul>
+        <!-- END Navigation menu -->
+
+      </div>
+    </nav>
+    <!-- END Navigation bar -->
+
+    <form>
+
+      <!-- Page header -->
+      <header class="page-header" style="background-image: url(assets/img/host.jpg)">
+        <div class="container page-name">
+          <h1 class="text-center">Earn money as an RealEstate host</h1>
+          <p class="lead text-center">Share your home on RealEstate to build up your savings, fund your next trip, or simply meet interesting travelers.</p>
+        </div>
+
+        <div class="container">
+
+          <div class="row">
+            <h1 class="text-center">Hosting in 3 steps</h1>
+            <hr class="hr-lg">
+
+            <div class="col-xs-12 col-sm-4">
+              <img src="assets/img/1.jpg" width="48" height="48" alt="">
+             <p class="lead text-center">
+              <h4 class="text-center">List your space for free</h4> 
+              Share any space without sign-up charges, from a shared living room to a second home and everything in-between.</p>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <img src="assets/img/2.jpg" width="48" height="48" alt="">
+             <p class="lead text-center" >
+              <h4 class="text-center">Decide how you want to host</h4> 
+              Choose your own schedule, prices, and requirements for guests. We’re there to help along the way.</p>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <img src="assets/img/3.jpg" width="48" height="48" alt="">
+             <p class="lead text-center">
+              <h4 class="text-center">Welcome your first guest</h4> 
+              Once your listing is live, qualified guests can reach out. You can message them with any questions before their stay.</p>
+            </div>
+
+          </div>
+        </div>
+      </header>
+      <!-- END Page header -->
+
+
+      <!-- Main container -->
+      <main>
+
+        <!-- Step 1 -->
+        <section>
+          <div class="container">
+
+            <header class="section-header">
+              <span>Step 1</span>
+              <h2>Start with the basics</h2>
+            </header>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-3"><h6 class="text-center eblue">1.Place type</h6>
+                  <div class="form-group">Now choose a property type
+                    <select class="form-control type-property">
+                      <option disabled>Select one</option>
+                      <option>Apartment</option>
+                      <option>Condominium</option>
+                      <option>Casa particular (Cuba)</option>
+                      <option>Loft</option>
+                      <option>Serviced apartment</option>
+                    </select>
+                  </div>
+                </div>
+              
+                <div class="col-xs-12 col-sm-3"><h6 class="text-center eblue">2.Bedrooms and bathrooms</h6>
+                  <h5 class="text-center">Bedrooms and bathrooms</h5>
+                  <h6>The number and type of beds you have determines how many guests can stay comfortably.
+                  </h6>
+                  <div class="form-group">Guests
+                      <input class="form-control max-guests" type="number" value="0" min="1" max="20" id="example-number-input">  
+                  </div>
+                  <div class="form-group">How many bedrooms can guests use?
+                      <input class="form-control bedrooms" type="number" value="0" min="1" max="20" id="example-number-input">
+                  </div>
+                  <div class="form-group">How many beds can guests use?
+                      <input class="form-control beds" type="number" value="0" min="1" max="20" id="example-number-input">
+                  </div>
+                  <div class="form-group"> How many bathrooms can guests use?
+                      <input class="form-control pathrooms" type="number" value="0" min="1" max="20" id="example-number-input">
+                  </div>
+                  <p>Is the bathroom private?</p>
+                  <div class="checkbox">
+                    <input type="radio" id="type1" name="pathroom-private" value="Yes">
+                    <label for="type1">Yes</label>
+                  </div>  
+                  <div class="checkbox">
+                    <input type="radio" id="type2" name="pathroom-private" value="No">
+                    <label for="type2">No</label>
+                  </div> 
+                </div> 
+                
+                <div class="col-xs-12 col-sm-3"><h6 class="text-center eblue">3.Location</h6>
+                
+                  <h5 class="text-center">Where’s your place located?</h5>
+                  <div class="form-group">Country / Region
+                    <select class="form-control country">
+                      <option disabled>Select one</option>
+                      <option value="AF">Afghanistan</option>
+                      <option value="AX">Åland Islands</option>
+                      <option value="AL">Albania</option>
+                      <option value="DZ">Algeria</option>
+                      <option value="AS">American Samoa</option>
+                      <option value="AD">Andorra</option>
+                      <option value="AO">Angola</option>
+                      <option value="AI">Anguilla</option>
+                      <option value="AQ">Antarctica</option>
+                      <option value="AG">Antigua and Barbuda</option>
+                      <option value="AR">Argentina</option>
+                      <option value="AM">Armenia</option>
+                      <option value="AW">Aruba</option>
+                      <option value="AU">Australia</option>
+                      <option value="AT">Austria</option>
+                      <option value="AZ">Azerbaijan</option>
+                      <option value="BS">Bahamas</option>
+                      <option value="BH">Bahrain</option>
+                      <option value="BD">Bangladesh</option>
+                      <option value="BB">Barbados</option>
+                      <option value="BY">Belarus</option>
+                      <option value="BE">Belgium</option>
+                      <option value="BZ">Belize</option>
+                      <option value="BJ">Benin</option>
+                      <option value="BM">Bermuda</option>
+                      <option value="BT">Bhutan</option>
+                      <option value="BO">Bolivia, Plurinational State of</option>
+                      <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                      <option value="BA">Bosnia and Herzegovina</option>
+                      <option value="BW">Botswana</option>
+                      <option value="BV">Bouvet Island</option>
+                      <option value="BR">Brazil</option>
+                      <option value="IO">British Indian Ocean Territory</option>
+                      <option value="BN">Brunei Darussalam</option>
+                      <option value="BG">Bulgaria</option>
+                      <option value="BF">Burkina Faso</option>
+                      <option value="BI">Burundi</option>
+                      <option value="KH">Cambodia</option>
+                      <option value="CM">Cameroon</option>
+                      <option value="CA">Canada</option>
+                      <option value="CV">Cape Verde</option>
+                      <option value="KY">Cayman Islands</option>
+                      <option value="CF">Central African Republic</option>
+                      <option value="TD">Chad</option>
+                      <option value="CL">Chile</option>
+                      <option value="CN">China</option>
+                      <option value="CX">Christmas Island</option>
+                      <option value="CC">Cocos (Keeling) Islands</option>
+                      <option value="CO">Colombia</option>
+                      <option value="KM">Comoros</option>
+                      <option value="CG">Congo</option>
+                      <option value="CD">Congo, the Democratic Republic of the</option>
+                      <option value="CK">Cook Islands</option>
+                      <option value="CR">Costa Rica</option>
+                      <option value="CI">Côte d'Ivoire</option>
+                      <option value="HR">Croatia</option>
+                      <option value="CU">Cuba</option>
+                      <option value="CW">Curaçao</option>
+                      <option value="CY">Cyprus</option>
+                      <option value="CZ">Czech Republic</option>
+                      <option value="DK">Denmark</option>
+                      <option value="DJ">Djibouti</option>
+                      <option value="DM">Dominica</option>
+                      <option value="DO">Dominican Republic</option>
+                      <option value="EC">Ecuador</option>
+                      <option value="EG">Egypt</option>
+                      <option value="SV">El Salvador</option>
+                      <option value="GQ">Equatorial Guinea</option>
+                      <option value="ER">Eritrea</option>
+                      <option value="EE">Estonia</option>
+                      <option value="ET">Ethiopia</option>
+                      <option value="FK">Falkland Islands (Malvinas)</option>
+                      <option value="FO">Faroe Islands</option>
+                      <option value="FJ">Fiji</option>
+                      <option value="FI">Finland</option>
+                      <option value="FR">France</option>
+                      <option value="GF">French Guiana</option>
+                      <option value="PF">French Polynesia</option>
+                      <option value="TF">French Southern Territories</option>
+                      <option value="GA">Gabon</option>
+                      <option value="GM">Gambia</option>
+                      <option value="GE">Georgia</option>
+                      <option value="DE">Germany</option>
+                      <option value="GH">Ghana</option>
+                      <option value="GI">Gibraltar</option>
+                      <option value="GR">Greece</option>
+                      <option value="GL">Greenland</option>
+                      <option value="GD">Grenada</option>
+                      <option value="GP">Guadeloupe</option>
+                      <option value="GU">Guam</option>
+                      <option value="GT">Guatemala</option>
+                      <option value="GG">Guernsey</option>
+                      <option value="GN">Guinea</option>
+                      <option value="GW">Guinea-Bissau</option>
+                      <option value="GY">Guyana</option>
+                      <option value="HT">Haiti</option>
+                      <option value="HM">Heard Island and McDonald Islands</option>
+                      <option value="VA">Holy See (Vatican City State)</option>
+                      <option value="HN">Honduras</option>
+                      <option value="HK">Hong Kong</option>
+                      <option value="HU">Hungary</option>
+                      <option value="IS">Iceland</option>
+                      <option value="IN">India</option>
+                      <option value="ID">Indonesia</option>
+                      <option value="IR">Iran, Islamic Republic of</option>
+                      <option value="IQ">Iraq</option>
+                      <option value="IE">Ireland</option>
+                      <option value="IM">Isle of Man</option>
+                      <option value="IL">Israel</option>
+                      <option value="IT">Italy</option>
+                      <option value="JM">Jamaica</option>
+                      <option value="JP">Japan</option>
+                      <option value="JE">Jersey</option>
+                      <option value="JO">Jordan</option>
+                      <option value="KZ">Kazakhstan</option>
+                      <option value="KE">Kenya</option>
+                      <option value="KI">Kiribati</option>
+                      <option value="KP">Korea, Democratic People's Republic of</option>
+                      <option value="KR">Korea, Republic of</option>
+                      <option value="KW">Kuwait</option>
+                      <option value="KG">Kyrgyzstan</option>
+                      <option value="LA">Lao People's Democratic Republic</option>
+                      <option value="LV">Latvia</option>
+                      <option value="LB">Lebanon</option>
+                      <option value="LS">Lesotho</option>
+                      <option value="LR">Liberia</option>
+                      <option value="LY">Libya</option>
+                      <option value="LI">Liechtenstein</option>
+                      <option value="LT">Lithuania</option>
+                      <option value="LU">Luxembourg</option>
+                      <option value="MO">Macao</option>
+                      <option value="MK">Macedonia, the former Yugoslav Republic of</option>
+                      <option value="MG">Madagascar</option>
+                      <option value="MW">Malawi</option>
+                      <option value="MY">Malaysia</option>
+                      <option value="MV">Maldives</option>
+                      <option value="ML">Mali</option>
+                      <option value="MT">Malta</option>
+                      <option value="MH">Marshall Islands</option>
+                      <option value="MQ">Martinique</option>
+                      <option value="MR">Mauritania</option>
+                      <option value="MU">Mauritius</option>
+                      <option value="YT">Mayotte</option>
+                      <option value="MX">Mexico</option>
+                      <option value="FM">Micronesia, Federated States of</option>
+                      <option value="MD">Moldova, Republic of</option>
+                      <option value="MC">Monaco</option>
+                      <option value="MN">Mongolia</option>
+                      <option value="ME">Montenegro</option>
+                      <option value="MS">Montserrat</option>
+                      <option value="MA">Morocco</option>
+                      <option value="MZ">Mozambique</option>
+                      <option value="MM">Myanmar</option>
+                      <option value="NA">Namibia</option>
+                      <option value="NR">Nauru</option>
+                      <option value="NP">Nepal</option>
+                      <option value="NL">Netherlands</option>
+                      <option value="NC">New Caledonia</option>
+                      <option value="NZ">New Zealand</option>
+                      <option value="NI">Nicaragua</option>
+                      <option value="NE">Niger</option>
+                      <option value="NG">Nigeria</option>
+                      <option value="NU">Niue</option>
+                      <option value="NF">Norfolk Island</option>
+                      <option value="MP">Northern Mariana Islands</option>
+                      <option value="NO">Norway</option>
+                      <option value="OM">Oman</option>
+                      <option value="PK">Pakistan</option>
+                      <option value="PW">Palau</option>
+                      <option value="PS">Palestinian Territory, Occupied</option>
+                      <option value="PA">Panama</option>
+                      <option value="PG">Papua New Guinea</option>
+                      <option value="PY">Paraguay</option>
+                      <option value="PE">Peru</option>
+                      <option value="PH">Philippines</option>
+                      <option value="PN">Pitcairn</option>
+                      <option value="PL">Poland</option>
+                      <option value="PT">Portugal</option>
+                      <option value="PR">Puerto Rico</option>
+                      <option value="QA">Qatar</option>
+                      <option value="RE">Réunion</option>
+                      <option value="RO">Romania</option>
+                      <option value="RU">Russian Federation</option>
+                      <option value="RW">Rwanda</option>
+                      <option value="BL">Saint Barthélemy</option>
+                      <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                      <option value="KN">Saint Kitts and Nevis</option>
+                      <option value="LC">Saint Lucia</option>
+                      <option value="MF">Saint Martin (French part)</option>
+                      <option value="PM">Saint Pierre and Miquelon</option>
+                      <option value="VC">Saint Vincent and the Grenadines</option>
+                      <option value="WS">Samoa</option>
+                      <option value="SM">San Marino</option>
+                      <option value="ST">Sao Tome and Principe</option>
+                      <option value="SA">Saudi Arabia</option>
+                      <option value="SN">Senegal</option>
+                      <option value="RS">Serbia</option>
+                      <option value="SC">Seychelles</option>
+                      <option value="SL">Sierra Leone</option>
+                      <option value="SG">Singapore</option>
+                      <option value="SX">Sint Maarten (Dutch part)</option>
+                      <option value="SK">Slovakia</option>
+                      <option value="SI">Slovenia</option>
+                      <option value="SB">Solomon Islands</option>
+                      <option value="SO">Somalia</option>
+                      <option value="ZA">South Africa</option>
+                      <option value="GS">South Georgia and the South Sandwich Islands</option>
+                      <option value="SS">South Sudan</option>
+                      <option value="ES">Spain</option>
+                      <option value="LK">Sri Lanka</option>
+                      <option value="SD">Sudan</option>
+                      <option value="SR">Suriname</option>
+                      <option value="SJ">Svalbard and Jan Mayen</option>
+                      <option value="SZ">Swaziland</option>
+                      <option value="SE">Sweden</option>
+                      <option value="CH">Switzerland</option>
+                      <option value="SY">Syrian Arab Republic</option>
+                      <option value="TW">Taiwan, Province of China</option>
+                      <option value="TJ">Tajikistan</option>
+                      <option value="TZ">Tanzania, United Republic of</option>
+                      <option value="TH">Thailand</option>
+                      <option value="TL">Timor-Leste</option>
+                      <option value="TG">Togo</option>
+                      <option value="TK">Tokelau</option>
+                      <option value="TO">Tonga</option>
+                      <option value="TT">Trinidad and Tobago</option>
+                      <option value="TN">Tunisia</option>
+                      <option value="TR">Turkey</option>
+                      <option value="TM">Turkmenistan</option>
+                      <option value="TC">Turks and Caicos Islands</option>
+                      <option value="TV">Tuvalu</option>
+                      <option value="UG">Uganda</option>
+                      <option value="UA">Ukraine</option>
+                      <option value="AE">United Arab Emirates</option>
+                      <option value="GB">United Kingdom</option>
+                      <option value="US">United States</option>
+                      <option value="UM">United States Minor Outlying Islands</option>
+                      <option value="UY">Uruguay</option>
+                      <option value="UZ">Uzbekistan</option>
+                      <option value="VU">Vanuatu</option>
+                      <option value="VE">Venezuela, Bolivarian Republic of</option>
+                      <option value="VN">Viet Nam</option>
+                      <option value="VG">Virgin Islands, British</option>
+                      <option value="VI">Virgin Islands, U.S.</option>
+                      <option value="WF">Wallis and Futuna</option>
+                      <option value="EH">Western Sahara</option>
+                      <option value="YE">Yemen</option>
+                      <option value="ZM">Zambia</option>
+                      <option value="ZW">Zimbabwe</option>
+                    </select>
+                  </div>
+                  <div class="input-group">Street Address
+                    <input type="text" class="form-control street" aria-label="address" placeholder="House name/number + street/road" required>
+                  </div>
+                  <div class="input-group">City    
+                    <input type="text" class="form-control city" aria-label="address" required>
+                  </div>
+                  <div class="input-group">District    
+                    <input type="text" class="form-control district" aria-label="address" required>
+                  </div>
+                  <div class="input-group">ZIP Code(optional)    
+                    <input type="text" class="form-control zipcode" aria-label="address" required>
+                  </div>
+                </div> 
+
+                <div class="col-xs-12 col-sm-3"><h6 class="text-center eblue">4.Amenities</h6>
+                  <h5 class="text-center">What amenities do you offer?</h5>
+                  <div class="form-group col-xs-12 col-sm-6">
+                    <div class="checkbox">
+                      <input type="checkbox" name="amenities" value="WiFi">
+                      <label for="contract1">WiFi</label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="amenities" value="Air Conditioning">
+                      <label for="contract">Air Conditioning</label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="amenities" value="Central Heating">
+                      <label for="contract3">Central Heating</label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="amenities" value="Electric Range">
+                      <label for="contract4">Electric Range</label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="amenities" value="Fire Alarm">
+                      <label for="contract5">Fire Alarm</label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="amenities" value="Gym">
+                      <label for="contract6">Gym</label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="amenities" value="Home Theater">
+                      <label for="contract7">Home Theater</label>
+                    </div>
+                  </div>
+                  <div class="form-group col-xs-12 col-sm-6">
+                    <div class="checkbox">
+                      <input type="checkbox" name="amenities" value="Laundry">
+                      <label for="contract9">Laundry</label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="amenities" value="Marble Floors">
+                      <label for="contract10">Marble Floors</label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="amenities" value="Microwave">
+                      <label for="contract11">Microwave</label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="amenities" value="Refrigerator">
+                      <label for="contract12">Refrigerator</label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="amenities" value="Central Heating">
+                      <label for="contract13">Central Heating</label>
+                    </div>
+                     <div class="checkbox">
+                      <input type="checkbox" name="amenities" value="Sauna">
+                      <label for="contract14">Sauna</label>
+                    </div>
+                     <div class="checkbox">
+                      <input type="checkbox" name="amenities" value="Swimming Pool">
+                      <label for="contract15">Swimming Pool</label>
+                    </div>
+                     <div class="checkbox">
+                      <input type="checkbox" name="amenities" value="TV Cable">
+                      <label for="contract16">TV Cable</label>
+                    </div>
+                     <div class="checkbox">
+                      <input type="checkbox" name="amenities" value="Washer">
+                      <label for="contract17">Washer</label>
+                    </div>
+                </div>
+            </div>            
+            
+          </div>
+          <h3 class="text-center"> Next <i class="fa fa-hand-o-down" aria-hidden="true"></i> </h3>
+        </section>
+        <!-- END Step 1 -->
+        
+
+
+        <!-- Step 2 -->
+        <section class=" bg-alt">
+          <div class="container">
+            <header class="section-header">
+              <span>Step 2</span>
+              <h2>Set the scene</h2>
+            </header>
+
+            <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label><h6>Show guests what your space looks like</h6></label>
+                      <div class="input-group">
+                        <span class="input-group-btn">
+                          <span class="btn btn-default btn-file">
+                            Browse… <input type="file" id="imgInp">
+                          </span>
+                        </span>
+                        <input type="text" class="form-control" readonly>
+                      </div>
+                      <img id='img-upload'/>
+                  </div>
+                </div>
+                
+                <div class="col-md-8">
+                 <div class="form-group">
+                    <label><h6>Name your place</h6></label>
+                     <i class="fa fa-home" aria-hidden="true"></i>
+                     <input type="text" class="form-control title" placeholder="Listing title">
+                 </div>   
+                <!--  <div class="form-group">
+                   <label><h6>Add your mobile number</h6></label>
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <input type="text" class="form-control">
+                 </div>    -->
+                 <div class="form-group">
+                    <label><h6>Per night</h6></label>
+                     <div class="input-group">
+                       <span class="input-group-addon">$</span>
+                       <input type="text" class="form-control price" aria-label="Amount (to the nearest dollar) " placeholder="Price">
+                       <span class="input-group-addon">.00</span>
+                   </div>
+                 </div>   
+                 <label><h6>Edit your description</h6></label>
+                 <div class="form-group">
+                    <textarea class="form-control description" rows="3" placeholder="Describe the décor, light, what's nearby, etc, acreage..."></textarea>
+                  </div>
+                </div>                  
+            </div>
+           <!--  <div class="row">
+            
+            </div> --> 
+
+
+          </div>
+          <h3 class="text-center"> Next <i class="fa fa-hand-o-down" aria-hidden="true"></i> </h3>
+        </section>
+        <!-- END Step 2 -->
+
+
+        <!-- Step 3 -->
+        <section>
+          <div class="container">
+            <header class="section-header">
+              <span>Step 3</span>
+              <h2>Get ready for guests</h2>
+            </header>
+            
+            <div class="row">
+              <h4 class="text-center">Review Airbnb’s guest requirements</h4> 
+              <div class="col-md-6">
+                <h5>All Airbnb guests must provide:</h5>
+                <p><i class="fa fa-check-square-o" aria-hidden="true"></i>Email address</p>
+                <p><i class="fa fa-check-square-o" aria-hidden="true"></i>Confirmed phone number</p>
+                <p><i class="fa fa-check-square-o" aria-hidden="true"></i>Payment information</p>
+              </div class="text-center">
+              <div class="col-md-6">
+                <h5>Before booking your home, each guest must:</h5>
+                <p class="negotiate"><i class="fa fa-check-square-o" aria-hidden="true"></i>Negotiate your House Rules</p>
+                <p><i class="fa fa-check-square-o" aria-hidden="true"></i>Message you about their trip</p>
+                <p><i class="fa fa-check-square-o" aria-hidden="true"></i>Let you know how many guests are coming</p>
+                <p><i class="fa fa-check-square-o" aria-hidden="true"></i>Confirm their check-in time if they’re arriving within 2 days</p>
+              </div>  
+            </div>  
+            <div class="row">
+              <h4 class="text-center">Set house rules for your guests</h4>
+              <div class="col-md-6">
+                <div class="col-md-8">
+                  <p class="negotiate">Negotiate</p>
+                  <p>Suitable for children (2-12 years)</p>
+                  <p>Suitable for infants (Under 2 years)</p>
+                  <p>Suitable for pets</p>
+                  <p>Smoking allowed</p>
+                  <p>Events or parties allowed</p> 
+                </div>
+                <div class="col-md-2">
+                  <p><input type="checkbox" class="js-switch" name="policies" value="Negotiate" checked></p>
+                  <p><input type="checkbox" class="js-switch" name="policies" value="Suitable for children (2-12 years)" checked></p>
+                  <p><input type="checkbox" class="js-switch" name="policies" value="Suitable for children (2-12 years)" checked></p>
+                  <p><input type="checkbox" class="js-switch" name="policies" value="Suitable for pets" checked></p>
+                  <p><input type="checkbox" class="js-switch" name="policies" value="Smoking allowed" checked></p>
+                  <p><input type="checkbox" class="js-switch" name="policies" value="Events or parties allowed" checked></p>
+                </div>
+              </div> 
+              <div class="col-md-6">
+                <h5>Details guests must know about your home</h5>  
+                <div class="checkbox">
+                      <input type="checkbox" id="abouthome1" name="policies" value="Must climb stairs">
+                      <label for="abouthome1">
+                        Must climb stairs  
+                      </label>
+                </div>
+                <div class="checkbox">
+                      <input type="checkbox" id="abouthome2" name="policies" value="Potential for noise">
+                      <label for="abouthome2">
+                        Potential for noise 
+                      </label>
+                </div>
+                <div class="checkbox">
+                      <input type="checkbox" id="abouthome3" name="policies" value="Pet(s) live on property">
+                      <label for="abouthome3">
+                        Pet(s) live on property  
+                      </label>
+                </div>
+                <div class="checkbox">
+                      <input type="checkbox" id="abouthome4" name="policies" value="No parking on property">
+                      <label for="abouthome4">
+                        No parking on property 
+                      </label>
+                </div>
+                <div class="checkbox">
+                      <input type="checkbox" id="abouthome5" name="policies" value="Some spaces are shared">
+                      <label for="abouthome5">
+                        Some spaces are shared 
+                      </label>
+                </div>
+                <div class="checkbox">
+                      <input type="checkbox" id="abouthome6" name="policies" value="Amenity limitations">
+                      <label for="abouthome6">
+                        Amenity limitations 
+                      </label>
+                </div>
+                <div class="checkbox">
+                      <input type="checkbox" id="abouthome7" name="policies" value="Surveillance or recording devices on property">
+                      <label for="abouthome7">
+                        Surveillance or recording devices on property
+                      </label>
+                </div>
+                <div class="checkbox">
+                      <input type="checkbox" id="abouthome8" name="policies" value="Weapons on property">
+                      <label for="abouthome8">
+                        Weapons on property
+                      </label>
+                </div>
+                <div class="checkbox">
+                      <input type="checkbox" id="abouthome9" name="policies" value="Dangerous animals on property">
+                      <label for="abouthome9">
+                        Dangerous animals on property
+                      </label>
+                </div>
+              </div> 
+            </div>
+            <div clas="row">
+              <h4 class="text-center">Update your calendar</h4>
+              <h2 class="text-center"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></h2>
+              <p class="text-center">Guests will see your calendar and book available days.</p>
+              
+              <div class="form-group col-xs-12 col-sm-6">
+                <div class="input-group date" data-provide="datepicker">
+                    <input type="text" class="form-control" placeholder="Start">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+              </div>
+              <div class="form-group col-xs-12 col-sm-6">
+                <div class="input-group date" data-provide="datepicker">
+                    <input type="text" class="form-control" placeholder="End">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <h3 class="text-center test"> Complete <i class="fa fa-check" aria-hidden="true"></i></h3>
+        </section>
+        <!-- END Step 3 -->
+
+        <!-- Submit -->
+        <section class=" bg-img" style="background-image: url(assets/img/bg-facts.jpg);">
+          <div class="container">
+            <header class="section-header">
+              <span>Are you done?</span>
+              <h2>You’re ready to publish!</h2>
+              <p>You’ll be able to welcome your first guest after you set your availability, which you can easily do after you hit publish.</p>
+            </header>
+
+            <p class="text-center"><button class="btn btn-success btn-xl btn-round">Publish listing</button></p>
+
+          </div>
+        </section>
+        <!-- END Submit -->
+
+
+      </main>
+      <!-- END Main container -->
+
+    </form>
+
+    <!-- Site footer -->
+    <footer class="site-footer">
+
+      <!-- Top section -->
+      <div class="container">
+        <div class="row">
+         <div class="col-xs-6 col-md-3">
+            <h6>RealEstate</h6>
+            <ul class="footer-links">
+              <li><a href="page-about.html">Careers</a></li>
+              <li><a href="page-typography.html">Press</a></li>
+              <li><a href="page-faq.html">Policies</a></li>
+              <li><a href="page-typography.html">Help</a></li>
+              <li><a href="page-contact.html">Diversity & Belonging</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Discover</h6>
+            <ul class="footer-links">
+              <li><a href="job-list.html">Trust & Safety</a></li>
+              <li><a href="job-list.html">Travel Credit</a></li>
+              <li><a href="job-list.html">Gift Cards</a></li>
+              <li><a href="job-list.html">Business Travel</a></li>
+              <li><a href="job-list.html">Guidebooks</a></li>
+              <li><a href="job-list.html">Events</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Hosting</h6>
+            <ul class="footer-links">
+              <li><a href="page-about.html">Why Host</a></li>
+              <li><a href="page-typography.html">Hospitality</a></li>
+              <li><a href="page-faq.html">Responsible Hosting</a></li>
+              <li><a href="page-typography.html">Community Center</a></li>
+              <li><a href="page-contact.html">Host an Experience</a></li>
+              <li><a href="page-contact.html">Open Homes</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <hr>
+      </div>
+      <!-- END Top section -->
+
+      <!-- Bottom section -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">© RealEstate, Inc.</p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- END Bottom section -->
+
+    </footer>
+    <!-- END Site footer -->
+
+
+    <!-- Back to top button -->
+    <a id="scroll-up" href="#"><i class="ti-angle-up"></i></a>
+    <!-- END Back to top button -->
+
+    <!-- Scripts -->
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/become-a-host.js"></script>
+  </body>
+</html>
+
