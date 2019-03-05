@@ -1,0 +1,86 @@
+.demo-btn-margin .btn{margin-bottom:6px}
+/* Makes images fully responsive */
+
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.eblue{
+	color: #46b8da;
+}
+.checked {
+    	color: orange;
+	}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#img-upload{
+    width: 100%;
+}
+
+.negotiate{	
+	color: #46b8da;
+}
+
+.borderblack{
+    border-width: 3px;
+    border-style: solid;
+    height: 410px;
+}
+.editbook{
+    padding: 0 150px;
+}
+
+
+.redClass {
+    border:solid 1px red
+}
+
+.fix{
+    width: 250%;
+}
+.cx6fix{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.fixhg{
+    width: 460px;
+}
+.fixhd{
+    height: 161px;
+}
+.fixnotif{
+    padding-bottom: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 102px;
+}
+
+
+.redClass {
+    border:solid 1px red
+}
