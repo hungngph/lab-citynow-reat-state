@@ -2,25 +2,14 @@ pragma solidity ^0.4.22;
 
 contract Property  
 {
-    
-    address public owner;
-	address public registry_address;
-    address public receiver;
+    address public creator;
     string public alias;
     string public geohash;
-    address[] public ownerhistory;
-	uint public ownertransfercount;
-    
-    mapping(address => uint) paymentpool;
-	mapping(bytes32 => bytes32) keyvaluestore;
-    
-    function Property(address _owner, string _alias, string _geohash)
+        
+    constructor(address _owner, string memory _alias, string memory _geohash)
     public
-    payable 
     {
-        owner = _owner;
-		ownerhistory.push(owner);
-		registry_address = msg.sender;
+        creator = _owner;
         alias = _alias;
         geohash = _geohash;
     }
@@ -29,53 +18,62 @@ contract Property
 contract PropertyRegistry
 {
     address public owner;
-    uint public numSps;
     mapping(address => Unit) records;
-    address[] public keys;
     
     // events
-    event PropertyAdded(address indexed owner, string _alias, string _geoHash);
+    event PropertyAdded(address indexed _creator, string _alias, string _geohash, string _placetype, string _bedandbath, string _location, string _amenities);
     
     // structs    
     struct  Unit
     {
         address creator;
         string alias;
-        string geoHash; 
-        uint keysIndex;
+        string geohash; 
+        string placetype;
+        string bedandbath;
+        string location;
+        string amenities;
+        uint active;
     }
     
-    function PropertyRegistry()
+    constructor()
     public
     {
         owner = msg.sender;
     }
     
-    function addProperty(string _alias, string _geoHash) 
+    function addProperty(string memory _alias, string memory _geohash, string memory _place, string memory _bab, string memory _locat, string memory _amenit) 
     public
-	returns (address _newProperty, uint _keyslength)
+	returns (address _newProperty)
     {
-        Property newProperty = new Property(msg.sender, _alias, _geoHash);
-        // newProperty.changeOwner(msg.sender);
-        keys.push(newProperty);
-        records[newProperty].alias = _alias;
-        records[newProperty].geoHash = _geoHash;
+        Property newProperty = new Property(msg.sender, _alias, _geohash);
         records[newProperty].creator = msg.sender;
-        records[newProperty].keysIndex = keys.length;
-        numSps++;
-        emit PropertyAdded(newProperty, _alias, _geoHash);
-		return (address(newProperty), keys.length);
+        records[newProperty].alias = _alias;
+        records[newProperty].geohash = _geohash;
+        records[newProperty].placetype = _place;
+        records[newProperty].bedandbath = _bab;
+        records[newProperty].location = _locat;
+        records[newProperty].amenities = _amenit;
+        records[newProperty].active = 1;
+
+        emit PropertyAdded(msg.sender, _alias, _geohash, _place, _bab, _locat, _amenit);
+		return (address(newProperty));
     }
     
     function getProperty(address addr) 
     public
     view
-    returns (address creator, string alias, string geoHash) 
+    returns (address _creator, string memory _alias, string memory _geohash, string memory _place, string memory _bab, string memory _locat, string memory _amenit, uint _acti) 
     {
-        creator = records[addr].creator;
-        alias = records[addr].alias;
-        geoHash = records[addr].geoHash;
-		return (creator, alias, geoHash);
+        _creator = records[addr].creator;
+        _alias = records[addr].alias;
+        _geohash = records[addr].geohash;
+        _place = records[addr].placetype;
+        _bab = records[addr].bedandbath;
+        _locat = records[addr].location;
+        _amenit = records[addr].amenities;
+        _acti = records[addr].active;
+		return (_creator, _alias, _geohash, _place, _bab, _locat, _amenit, _acti);
     }
     
 } 

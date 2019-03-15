@@ -30,11 +30,11 @@ App = {
         console.log("Metadata Registry Address:", metadataregistry.address);
       });
     }).done(function() {
-      $.getJSON("SpatialUnitRegistry.json", function(spatialUnitRegistry) {
-        App.contracts.SpatialUnitRegistry = TruffleContract(spatialUnitRegistry);
-        App.contracts.SpatialUnitRegistry.setProvider(App.web3Provider);
-        App.contracts.SpatialUnitRegistry.deployed().then(function(spatialUnitRegistry) {
-          console.log("SpatialUnit Registry Address:", spatialUnitRegistry.address);
+      $.getJSON("PropertyRegistry.json", function(PropertyRegistry) {
+        App.contracts.PropertyRegistry = TruffleContract(PropertyRegistry);
+        App.contracts.PropertyRegistry.setProvider(App.web3Provider);
+        App.contracts.PropertyRegistry.deployed().then(function(PropertyRegistry) {
+          console.log("Property Registry Address:", PropertyRegistry.address);
         });
         }).done(function() {
           $.getJSON("RightsRegistry.json", function(rightsRegistry) {
@@ -43,25 +43,10 @@ App = {
             App.contracts.RightsRegistry.deployed().then(function(rightsRegistry) {
               console.log("Rights Registry Address:", rightsRegistry.address);
             });
-            App.listenForEvents();
             return App.render();
           });
         });
       });
-  },
-
-  // Listen for events emitted from the contract
-
-  listenForEvents: function() {
-    App.contracts.SpatialUnitRegistry.deployed().then(function(instance) {
-      instance.Sell({}, {
-        fromBlock: 0,
-        toBlock: 'latest',
-      }).watch(function(error, event) {
-        console.log("event triggered", event);
-        App.render();
-      })
-    })
   },
 
   render: function() {
@@ -85,17 +70,21 @@ App = {
     })
   },
 
-  addSpatialUnit: function() {
+  addProperty: function() {
     var typeProperty = $(".type-property").val();
 
     var maxGuests = $(".max-guests").val();
     var bedrooms = $(".bedrooms").val();
     var beds = $(".beds").val();
     var bathrooms = $(".bathrooms").val();
-    var isBathroomPrivate = $("input[name='bathroom-private']:checked").val();
+    var isBathroomPrivate = [];
+    $("input[name='bathroom-private']:checked").each(function(i){
+      isBathroomPrivate[i] = $(this).val();
+    });
+
     var bedahdbath = $(".max-guests").val() + ", " + $(".bedrooms").val()  
     + ", " + $(".beds").val() + ", " + $(".bathrooms").val() 
-    + ", " + $(".input[name='bathroom-private']:checked").val();
+    + ", " + isBathroomPrivate;
     console.log(bedahdbath);
     
     var country = $(".country").val();
@@ -104,19 +93,29 @@ App = {
     var district = $(".district").val();
     var zipcode = $(".zipcode").val();
 
-    var location = $(".street").val() + ", " + $(".district").val()  
-    + ", " + $(".city").val() + ", " + $(".country").val() 
+    var location = $(".country").val() + ", " + $(".street").val() 
+    + ", " + $(".district").val()  
+    + ", " + $(".city").val() 
     + ", " + $(".zipcode").val();
+    console.log(location);
 
-    App.contracts.SpatialUnitRegistry.deployed().then(function(instance) {
-      console.log(instance);
-      return instance.addSpatialUnit("T", "T", {
+    var amenities = [];
+    $("input[name='amenities']:checked").each(function(i){
+        amenities[i] = $(this).val();
+    });
+    console.log(amenities);
+
+    var title = $(".title").val();
+    var ghash = $(".ghash").val();   
+
+    App.contracts.PropertyRegistry.deployed().then(function(instance) {
+      return instance.addProperty(title, ghash, typeProperty, location, bedahdbath, "amenities", {
         from: App.account,
         value: 0,
         gas: 3000000 // Gas limit
       });
-    }).then(function(result) {
-      console.log("Done...")
+    }).then(function(error, result) {
+      console.log(result);
     });
   }
 }

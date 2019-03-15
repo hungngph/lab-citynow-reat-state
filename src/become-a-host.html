@@ -158,7 +158,7 @@
                   </div>
                   <p>Is the bathroom private?</p>
                   <div class="checkbox">
-                    <input type="radio" id="type1" name="bathroom-private" value="Yes">
+                    <input type="radio" id="type1" name="bathroom-private" value="Yes" checked>  
                     <label for="type1">Yes</label>
                   </div>  
                   <div class="checkbox">
@@ -547,6 +547,11 @@
                      <i class="fa fa-home" aria-hidden="true"></i>
                      <input type="text" class="form-control title" placeholder="Listing title">
                  </div>   
+				 <div class="form-group">
+                    <label><h6>Geographic Hash</h6></label>
+                     <i class="fa fa-globe-europe" aria-hidden="true"></i>
+                     <input type="text" class="form-control ghash" placeholder="GeoHash">
+                 </div> 
                 <!--  <div class="form-group">
                    <label><h6>Add your mobile number</h6></label>
                     <i class="fa fa-phone" aria-hidden="true"></i>
@@ -706,6 +711,7 @@
         </section>
         <!-- END Step 3 -->
 
+
         <!-- Submit -->
         <section class=" bg-img" style="background-image: url(assets/img/bg-facts.jpg);">
           <div class="container">
@@ -715,7 +721,7 @@
               <p>You’ll be able to welcome your first guest after you set your availability, which you can easily do after you hit publish.</p>
             </header>
 
-            <p class="text-center"><button onclick="App.addSpatialUnit()" class="btn btn-success btn-xl btn-round">Publish listing</button></p>
+            <p class="text-center"><button type="button" onclick="App.addProperty()" class="btn btn-success btn-xl btn-round">Publish listing</button></p>
 
           </div>
         </section>

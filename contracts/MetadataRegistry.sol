@@ -17,7 +17,7 @@ contract MetadataRegistry
 
 	event LinkRemoved(address indexed property, uint numLink);
 
-	function setLink(address _property, string _hyperlink)
+	function setLink(address _property, string memory _hyperlink)
 	public
 	{
 		propertylink[_property].hyperlink.push(_hyperlink);
@@ -48,7 +48,7 @@ contract MetadataRegistry
 	function getLink(address _property, uint _num)
 	public
 	view
-	returns (string _hyperlink)
+	returns (string memory _hyperlink)
 	{
 		return propertylink[_property].hyperlink[_num];
 	}
@@ -57,7 +57,7 @@ contract MetadataRegistry
 
 	function getNumLinks(address _property)
 	public 
-	constant 
+	view
 	returns (uint)
 	{
 		return propertylink[_property].numLinks;
