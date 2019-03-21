@@ -10,7 +10,7 @@ contract Agreement
     address tenant;
 
 
-    function Agreement(address _landlord, address _tenant, address _premises)
+    constructor(address _landlord, address _tenant, address _premises)
     public
     payable 
     {

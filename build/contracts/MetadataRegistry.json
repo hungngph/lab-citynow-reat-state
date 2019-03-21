@@ -928,10 +928,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        611,
-                        612
+                        691,
+                        692
                       ],
-                      "referencedDeclaration": 611,
+                      "referencedDeclaration": 691,
                       "src": "642:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1672,7 +1672,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 608,
+                          "referencedDeclaration": 688,
                           "src": "1061:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -2999,10 +2999,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        611,
-                        612
+                        691,
+                        692
                       ],
-                      "referencedDeclaration": 611,
+                      "referencedDeclaration": 691,
                       "src": "642:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -3743,7 +3743,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 608,
+                          "referencedDeclaration": 688,
                           "src": "1061:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -4267,95 +4267,31 @@
     "version": "0.4.24+commit.e67f0147.Emscripten.clang"
   },
   "networks": {
-    "1": {
+    "1552926698508": {
       "events": {},
       "links": {},
-      "address": "0x22625e2bf1799cfd3dcccd3e17c21366c8944b50"
+      "address": "0x21f2bbfe89eebea064f2a08b2aab0713c90263e3",
+      "transactionHash": "0x59826fb5bad7493e958124a717e99a2460f2d9dfa3e21136946137c1380149c6"
     },
-    "5777": {
+    "1552930861515": {
       "events": {},
       "links": {},
-      "address": "0x8cb3ff7bea4ea65f01ec4dfcb90a9c1b52b4521a",
-      "transactionHash": "0xd348f639d4f99c1dc2315f0b337fe5bc1dc6c0dfb51932f40573c0b7ffe02086"
-    },
-    "1522954080738": {
-      "events": {},
-      "links": {},
-      "address": "0xe38a09c9c2909bdd71754be1ce52b7882ac02b48",
-      "transactionHash": "0x102b313f8d11e3d0740973c4d5d171ff99d4ca512d4bd1c5d646dea18c3d58f6"
-    },
-    "1523639315661": {
-      "events": {},
-      "links": {},
-      "address": "0xd13b40f11e1278aa3de8e24be3f3a80e14b7cf43"
-    },
-    "1524405448120": {
-      "events": {},
-      "links": {},
-      "address": "0x33e725336502a1ed5ec19714c9fee539f8ef48d6",
-      "transactionHash": "0xc216eac75e44069074ca9bc1036428ee9b57355e66447126df3b3d9ddd1bcdfd"
-    },
-    "1524491612924": {
-      "events": {},
-      "links": {},
-      "address": "0xc2701457e345ba89452bdba9b6ccd327a165dcee",
-      "transactionHash": "0x904501c688b9afca4deb7727028b73d53eb8d600762cc54467fc6b6eb31c5ec3"
-    },
-    "1524491917160": {
-      "events": {},
-      "links": {},
-      "address": "0xfe5a002ca19e2363e0ba83a5914fb9b06ef9f3fe",
-      "transactionHash": "0x904501c688b9afca4deb7727028b73d53eb8d600762cc54467fc6b6eb31c5ec3"
-    },
-    "1524500690377": {
-      "events": {},
-      "links": {},
-      "address": "0x96a3aaafd2698ab6de7f394963e772ddc38f878c",
-      "transactionHash": "0x8a9f2c8077659eefa4a8cc885bcd2900cdd045509e2c7553e83d6b919febc52f"
-    },
-    "1551255587860": {
-      "events": {},
-      "links": {},
-      "address": "0x52c6f7ca925cb51cedfeb4fab701e04f709977ea",
-      "transactionHash": "0xd2d9af5aa709413739a197c0faeb9501cf5370a9170534805b7261cac5550733"
-    },
-    "1551278505326": {
-      "events": {},
-      "links": {},
-      "address": "0x9da5c66e5f726f61f54fd6c920fb7e52acb69189",
-      "transactionHash": "0x5ceace70eee03ee9a394bf40b668496aab12d4002968fb59b1ac3c1a078328ae"
-    },
-    "1551931313732": {
-      "events": {},
-      "links": {},
-      "address": "0x5b565883c328569839ae3c03e24ee15afbd16f43",
-      "transactionHash": "0xc8944e1aea16f8c6512e8d5b3903037eec28eed920bf15b7f8993870aa225488"
-    },
-    "1552447782152": {
-      "events": {},
-      "links": {},
-      "address": "0x64fd9053f6f8ed627e893fd673b3f50fa82a7084",
-      "transactionHash": "0xc8944e1aea16f8c6512e8d5b3903037eec28eed920bf15b7f8993870aa225488"
-    },
-    "1552461736916": {
-      "events": {},
-      "links": {},
-      "address": "0x83dbdbe7adda2e65233cf41f974a19830e44d4bc",
-      "transactionHash": "0x220ee32b067eb2f7bd526cf7c145358667ae79e4965b789a2eb42e690baf24d7"
-    },
-    "1552544654454": {
-      "events": {},
-      "links": {},
-      "address": "0x980019f54799c50e5598465a408fd41123095080",
+      "address": "0x56460217248b2d8b6bcdcb8a2159305ff79b7300",
       "transactionHash": "0xca1ee6cf3b651188ecd3c709c1504420ba8a00a3eeb31d7921a56d5932e88b07"
     },
-    "1552546481047": {
+    "1553057573638": {
       "events": {},
       "links": {},
-      "address": "0xc771847ba9668227e24b52e6110f3e0c15a81c36",
+      "address": "0x2f7e8d105a39b83a237df5e63ff3fb0012388daa",
+      "transactionHash": "0xa379d780955851e33316c209783d251910c0cfa65570dd622da4b999b1488e64"
+    },
+    "1553144418284": {
+      "events": {},
+      "links": {},
+      "address": "0xf194ff856faa0186d4f1ff769b6e8081f7d973a4",
       "transactionHash": "0xca1ee6cf3b651188ecd3c709c1504420ba8a00a3eeb31d7921a56d5932e88b07"
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-03-14T06:55:53.834Z"
+  "updatedAt": "2019-03-21T05:00:46.498Z"
 }

@@ -3,6 +3,7 @@ App = {
   contracts: {},
   account: '0x0',
   loading: false,
+  recentshome: {},
 
   init: function() {
     console.log("App initialized...")
@@ -68,15 +69,14 @@ App = {
         console.log("Your Account: " + account);
       }
     })
+
+    if(document.location.pathname=='/') { return App.getinfoProperty(); }
+
   },
 
   addProperty: function() {
     var typeProperty = $(".type-property").val();
 
-    var maxGuests = $(".max-guests").val();
-    var bedrooms = $(".bedrooms").val();
-    var beds = $(".beds").val();
-    var bathrooms = $(".bathrooms").val();
     var isBathroomPrivate = [];
     $("input[name='bathroom-private']:checked").each(function(i){
       isBathroomPrivate[i] = $(this).val();
@@ -85,37 +85,122 @@ App = {
     var bedahdbath = $(".max-guests").val() + ", " + $(".bedrooms").val()  
     + ", " + $(".beds").val() + ", " + $(".bathrooms").val() 
     + ", " + isBathroomPrivate;
-    console.log(bedahdbath);
-    
-    var country = $(".country").val();
-    var street = $(".street").val();
-    var city = $(".city").val();   
-    var district = $(".district").val();
-    var zipcode = $(".zipcode").val();
 
-    var location = $(".country").val() + ", " + $(".street").val() 
+    var location = $(".country").val() + ", " + $(".city").val() 
     + ", " + $(".district").val()  
-    + ", " + $(".city").val() 
+    + ", " + $(".street").val() 
     + ", " + $(".zipcode").val();
-    console.log(location);
 
     var amenities = [];
     $("input[name='amenities']:checked").each(function(i){
         amenities[i] = $(this).val();
     });
-    console.log(amenities);
 
     var title = $(".title").val();
     var ghash = $(".ghash").val();   
 
+    var hlink = $(".description").val();  
+
     App.contracts.PropertyRegistry.deployed().then(function(instance) {
       return instance.addProperty(title, ghash, typeProperty, location, bedahdbath, "amenities", {
         from: App.account,
-        value: 0,
-        gas: 3000000 // Gas limit
+        value: 0
       });
-    }).then(function(error, result) {
+    }).then(function(result) {
       console.log(result);
+      console.log(result.logs[0].args);
+      App.contracts.MetadataRegistry.deployed().then(function(instance) {
+        return instance.setLink(result.logs[0].args._newProperty, hlink, {
+          from: App.account,
+          value: 0
+        });
+      }).then(function(result) {
+        console.log(result.logs[0].args);
+      }); 
+    });
+
+  },
+
+  getinfoProperty: function() {
+
+    App.contracts.PropertyRegistry.deployed().then(function(instance) {
+      return instance.getinfoProperty(0, {
+        from: App.account,
+        value: 0
+      });
+    }).then(function(result) {
+      App.contracts.MetadataRegistry.deployed().then(function(instance) {
+        return instance.getLink(result[0], 0, {
+          from: App.account,
+          value: 0
+        });
+      }).then(function(results) {
+        result.hyperlink = results;
+        Array.prototype.push.call(App.recentshome, result);
+        console.log(App.recentshome);
+
+        var div1 = document.createElement('div');
+        var div2 = document.createElement('div');
+        var div3 = document.createElement('div');
+        div1.className = "col-xs-12";
+        div2.className = "hgroup";
+        div3.className = "header-meta";
+
+        var a1 = document.createElement('a');
+        a1.className = "item-block";
+        a1.href = "home-detail.html";
+
+        var header1 = document.createElement('header');
+        header1.id = "insertimg"; 
+
+        var h1 = document.createElement('h4');
+        h1.innerHTML = App.recentshome[0][1];
+
+        var h2 = document.createElement('h5');
+        h2.innerHTML = App.recentshome[0][2];
+        
+        var starSpan1 = document.createElement('span');
+        starSpan1.className = "fa fa-star checked";
+        var starSpan2 = document.createElement('span');
+        starSpan2.className = "fa fa-star checked";
+        var starSpan3 = document.createElement('span');
+        starSpan3.className = "fa fa-star checked";
+        var starSpan4 = document.createElement('span');
+        starSpan4.className = "fa fa-star checked";
+        var starSpan5 = document.createElement('span');
+        starSpan5.className = "fa fa-star unchecked";
+
+        var locatSpan = document.createElement('span');
+        locatSpan.className = "location";
+        var templot = App.recentshome[0][3].split(",",2);
+        locatSpan.innerHTML = templot;
+
+        var neoSpan = document.createElement('span');
+        neoSpan.className = "label label-warning";
+        neoSpan.innerHTML = "Negotiate";
+
+        var source = document.getElementById("jobitem");
+        source.appendChild(div1);
+        div1.appendChild(a1);
+        a1.appendChild(header1);
+        header1.appendChild(div2);
+        header1.appendChild(div3);
+        div2.appendChild(h1);
+        div2.appendChild(h2);
+        h1.appendChild(starSpan1);
+        h1.appendChild(starSpan2);
+        h1.appendChild(starSpan3);
+        h1.appendChild(starSpan4);
+        h1.appendChild(starSpan5);
+        div3.appendChild(locatSpan);
+        div3.appendChild(neoSpan);
+
+        var img = new Image();
+        img.src = App.recentshome[0].hyperlink;
+        var src = document.getElementById("insertimg");
+        src.appendChild(img);
+
+      });
     });
   }
 }

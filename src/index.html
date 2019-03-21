@@ -13,7 +13,7 @@
     <!-- Styles -->
     <link href="assets/css/app.min.css" rel="stylesheet">
     <link href="assets/css/custom.css" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Oswald:100,300,400,500,600,800%7COpen+Sans:300,400,500,600,700,800%7CMontserrat:400,700' rel='stylesheet' type='text/css'>
 
@@ -22,7 +22,7 @@
     <link rel="icon" href="assets/img/r.png">
   </head>
 
-  <body class="nav-on-header smart-nav">
+  <body class="nav-on-header smart-nav" onload="App.init()">
 
     <!-- Navigation bar -->
     <nav class="navbar">
@@ -114,127 +114,10 @@
             <h2>Homes for your kind of trip</h2>
           </header>
 
-          <div class="row item-blocks-connected">
+          <div class="row item-blocks-connected" id="jobitem">
 
             <!-- Job item -->
-            <div class="col-xs-12">
-              <a class="item-block" href="home-detail.html">
-                <header>
-                  <img src="assets/img/home-logo1.jpg" alt="">
-                  <div class="hgroup">
-                    <h4>House in countryside (30 km dal mare)
-                    	<span class="fa fa-star checked"></span>
-                    	<span class="fa fa-star checked"></span>
-                    	<span class="fa fa-star checked"></span>
-                    	<span class="fa fa-star checked"></span>
-                    	<span class="fa fa-star"></span>
-                    </h4>
-                    <h5>ENTIRE APARTMENT · 8 BEDS</h5>
-                  </div>
-                  <div class="header-meta">
-                    <span class="location">Ho Chi Minh, Viet Nam</span>
-                    <span class="label label-warning">negotiate</span>
-                  </div>
-                </header>
-              </a>
-            </div>
-            <!-- END Job item -->
 
-
-            <!-- Job item -->
-            <div class="col-xs-12">
-              <a class="item-block" href="home-detail.html">
-                <header>
-                  <img src="assets/img/home-logo2.png" alt="">
-                  <div class="hgroup">
-                    <h4>Lovely New 1Br & Hall @ MRT Novena Newton Orchard
-						<span class="fa fa-star checked"></span>
-                    	<span class="fa fa-star checked"></span>
-                    	<span class="fa fa-star checked"></span>
-                    	<span class="fa fa-star checked"></span>
-                    	<span class="fa fa-star"></span>
-                    </h4>
-                    <h5>ENTIRE CONDOMINIUM · 2 BEDS</h5>
-                  </div>
-                  <div class="header-meta">
-                    <span class="location">Ho Chi Minh, Viet Nam</span>
-                    <span class="label label-warning">negotiate</span>
-                  </div>
-                </header>
-              </a>
-            </div>
-            <!-- END Job item -->
-
-            <!-- Job item -->
-            <div class="col-xs-12">
-              <a class="item-block" href="job-detail.html">
-                <header>
-                  <img src="assets/img/home-logo3.png" alt="">
-                  <div class="hgroup">
-                    <h4>Prime Central Apartment For Five
-					           	<span class="fa fa-star checked"></span>
-                    	<span class="fa fa-star checked"></span>
-                    	<span class="fa fa-star checked"></span>
-                    	<span class="fa fa-star checked"></span>
-                    	<span class="fa fa-star checked"></span>
-                    </h4>
-                    <h5>ENTIRE TOWNHOUSE · 4 BEDS</h5>
-                  </div>
-                  <div class="header-meta">
-                    <span class="location">Singapore</span>
-                    <span class="label label-danger">negotiate</span>
-                  </div>
-                </header>
-              </a>
-            </div>
-            <!-- END Job item -->
-
-            <!-- Job item -->
-            <div class="col-xs-12">
-              <a class="item-block" href="job-detail.html">
-                <header>
-                  <img src="assets/img/home-logo4.png" alt="">
-                  <div class="hgroup">
-                    <h4>The Courtyard Home - 4BR Apartment near Phong Nha Ke Bang
-						<span class="fa fa-star checked"></span>
-                    	<span class="fa fa-star checked"></span>
-                    	<span class="fa fa-star checked"></span>
-                    	<span class="fa fa-star checked"></span>
-                    	<span class="fa fa-star"></span>
-                    </h4>
-                    <h5>ENTIRE TOWNHOUSE · 9 BEDS</h5>
-                  </div>
-                  <div class="header-meta">
-                    <span class="location">Quang Binh, Viet Nam</span>
-                    <span class="label label-warning">no negotiate</span>
-                  </div>
-                </header>
-              </a>
-            </div>
-            <!-- END Job item -->
-
-            <!-- Job item -->
-            <div class="col-xs-12">
-              <a class="item-block" href="job-detail.html">
-                <header>
-                  <img src="assets/img/home-logo5.png" alt="">
-                  <div class="hgroup">
-                    <h4>【Hot!】Family Seaview 【10m LegoLand】8m ParadigmMall
-						<span class="fa fa-star checked"></span>
-                    	<span class="fa fa-star checked"></span>
-                    	<span class="fa fa-star checked"></span>
-                    	<span class="fa fa-star checked"></span>
-                    	<span class="fa fa-star checked"></span>
-                    </h4>
-                    <h5>ENTIRE HOUSE · 8 BEDS</h5>
-                  </div>
-                  <div class="header-meta">
-                    <span class="location">Ha Noi, Viet Nam</span>
-                    <span class="label label-danger">negotiate</span>
-                  </div>
-                </header>
-              </a>
-            </div>
             <!-- END Job item -->
 
           </div>
@@ -458,6 +341,6 @@
     <script src="js/web3.min.js"></script>
     <script src="js/truffle-contract.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="assets/vendors/jquery.min.js"></script>
   </body>
 </html>
