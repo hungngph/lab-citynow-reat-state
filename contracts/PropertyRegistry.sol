@@ -1,5 +1,4 @@
 pragma solidity ^0.4.22;
-import "./MetadataRegistry.sol";
 
 contract Property  
 {
@@ -21,10 +20,14 @@ contract PropertyRegistry
     address public owner;
     mapping(address => Unit) records;
     mapping(int => address) numsProp;
+    mapping(address => mapping(int => Payment)) paymentpool;
     int numspro;
     
     // events
     event PropertyAdded(address _newProperty, address indexed _creator, string _alias, string _geohash, string _placetype, string _bedandbath, string _location, string _amenities);
+    event SentRequest(address _property, address _renter, string _s_time, string _e_time, int _guests, string _timesentrq);
+    event AcceptRequest(address _property, address _renter, int _numrq);
+    event RejectRequest(address _property, address _renter, int _numrq);
     
     // structs    
     struct  Unit
@@ -38,6 +41,17 @@ contract PropertyRegistry
         string amenities;
         uint active;
         int num;
+        int paymentcount;
+    }
+
+    struct Payment
+    {
+        address renter;
+        string s_time;
+        string e_time;
+        int guests;
+        string timesentrq;
+        string status;
     }
     
     constructor()
@@ -99,5 +113,41 @@ contract PropertyRegistry
         _place = records[addr].placetype;
         _location = records[addr].location;
         return (addr, _alias, _place, _location);
+    }
+    
+    function requesttorent(address _property, address _renter, string _s_time, string _e_time, int _guests, string _timesentrq)
+    public
+    {
+        Payment memory newPayment;
+        newPayment.renter = _renter;
+        newPayment.s_time = _s_time;
+        newPayment.e_time = _e_time;
+        newPayment.guests = _guests;
+        newPayment.timesentrq = _timesentrq;
+        newPayment.status = "Waiting";
+        paymentpool[_property][records[_property].paymentcount] = newPayment;
+        records[_property].paymentcount++;
+        emit SentRequest(_property, _renter, _s_time, _e_time, _guests, _timesentrq);
+    }
+    
+    // address owner use in require
+    function acceptrequest(address _property, int _numrq)
+    public
+    {
+        paymentpool[_property][_numrq].status = "Accepted";
+        emit AcceptRequest(_property, paymentpool[_property][_numrq].renter, _numrq);
+    }
+    
+    function rejectrequest(address _property, int _numrq)
+    public
+    {
+        require(records[_property].paymentcount != 0);
+        for(int i = _numrq; i < records[_property].paymentcount-1; i++)
+        {
+            paymentpool[_property][i] = paymentpool[_property][i+1];
+        }
+        delete paymentpool[_property][records[_property].paymentcount-1];
+        records[_property].paymentcount--; 
+        emit RejectRequest(_property, paymentpool[_property][_numrq].renter, _numrq);
     }
 } 

@@ -21,8 +21,8 @@
       "type": "constructor"
     }
   ],
-  "bytecode": "0x6080604052604051606080610142833981018060405281019080805190602001909291908051906020019092919080519060200190929190505050826000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555081600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050505060358061010d6000396000f3006080604052600080fd00a165627a7a723058208117181c3fa5766134e92158cad2d2f659a2f6b0be366569707ae6adcd9ab23b0029",
-  "deployedBytecode": "0x6080604052600080fd00a165627a7a723058208117181c3fa5766134e92158cad2d2f659a2f6b0be366569707ae6adcd9ab23b0029",
+  "bytecode": "0x6080604052604051606080610142833981018060405281019080805190602001909291908051906020019092919080519060200190929190505050826000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555081600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050505060358061010d6000396000f3006080604052600080fd00a165627a7a723058208c7d45f54d1cf1edf12335c772bba27983a9047fe2b329f36e4096a555cdd40d0029",
+  "deployedBytecode": "0x6080604052600080fd00a165627a7a723058208c7d45f54d1cf1edf12335c772bba27983a9047fe2b329f36e4096a555cdd40d0029",
   "sourceMap": "60:282:0:-;;;152:188;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;268:9;257:8;;:20;;;;;;;;;;;;;;;;;;298:9;287:8;;:20;;;;;;;;;;;;;;;;;;326:7;317:6;;:16;;;;;;;;;;;;;;;;;;152:188;;;60:282;;;;;;",
   "deployedSourceMap": "60:282:0:-;;;;;",
   "source": "pragma solidity ^0.4.23;\n\nimport \"./PropertyRegistry.sol\";\n\ncontract Agreement\n{\n\n    address landlord;\n    address premises;\n    address tenant;\n\n\n    constructor(address _landlord, address _tenant, address _premises)\n    public\n    payable \n    {\n        landlord = _landlord;\n        premises = _premises;\n        tenant = _tenant;\n    }\n}\n\ncontract AgreementSig\n{\n    struct twoSig\n    {\n        address landlord;\n        address premises;\n        string managementinfo;\n        uint cost;\n        string[] damages;\n    \n        address tenant;\n        uint securitydeposit;\n        string starttime;\n        string endtime;\n    }\n\n    mapping(address => twoSig) arecords;\n\n    // events\n    event InitializeAgreement(address indexed  _landlord, address indexed  _tenant, address indexed  _premises);\n\n    function InitAgreement(address _landlord, address _tenant, address _premises) \n    public\n\treturns (address _newAgreement)\n    {\n        Agreement newAgreement = new Agreement(_landlord, msg.sender, _premises);\n        arecords[newAgreement].landlord = _landlord;\n        arecords[newAgreement].premises = _premises;\n        arecords[newAgreement].tenant = msg.sender;\n        emit InitializeAgreement(_landlord, msg.sender, _premises);\n\t\treturn (address(newAgreement));\n    }\n\n    function getAgreement(address addr) \n    public\n    view\n    returns (address landlord, address tenant, address premises) \n    {\n        landlord = arecords[addr].landlord;\n        tenant = arecords[addr].tenant;\n        premises = arecords[addr].premises;\n\t\treturn (landlord, tenant, premises);\n    }\n}",
@@ -57,7 +57,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 159,
-        "sourceUnit": 674,
+        "sourceUnit": 749,
         "src": "26:32:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -887,7 +887,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 688,
+                          "referencedDeclaration": 763,
                           "src": "997:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1230,7 +1230,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 688,
+                        "referencedDeclaration": 763,
                         "src": "1167:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -1286,7 +1286,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 688,
+                          "referencedDeclaration": 763,
                           "src": "1223:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -2081,7 +2081,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 159,
-        "sourceUnit": 674,
+        "sourceUnit": 749,
         "src": "26:32:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2911,7 +2911,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 688,
+                          "referencedDeclaration": 763,
                           "src": "997:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -3254,7 +3254,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 688,
+                        "referencedDeclaration": 763,
                         "src": "1167:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -3310,7 +3310,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 688,
+                          "referencedDeclaration": 763,
                           "src": "1223:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -4081,5 +4081,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-03-21T05:00:45.181Z"
+  "updatedAt": "2019-04-01T12:08:29.210Z"
 }

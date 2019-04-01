@@ -92,8 +92,10 @@ App = {
     + ", " + $(".zipcode").val();
 
     var amenities = [];
+    var amenis;
     $("input[name='amenities']:checked").each(function(i){
         amenities[i] = $(this).val();
+        amenis += amenities[i] + ", ";
     });
 
     var title = $(".title").val();
@@ -102,7 +104,7 @@ App = {
     var hlink = $(".description").val();  
 
     App.contracts.PropertyRegistry.deployed().then(function(instance) {
-      return instance.addProperty(title, ghash, typeProperty, location, bedahdbath, "amenities", {
+      return instance.addProperty(title, ghash, typeProperty,bedahdbath, location , amenis, {
         from: App.account,
         value: 0
       });
@@ -139,66 +141,30 @@ App = {
         Array.prototype.push.call(App.recentshome, result);
         console.log(App.recentshome);
 
-        var div1 = document.createElement('div');
-        var div2 = document.createElement('div');
-        var div3 = document.createElement('div');
-        div1.className = "col-xs-12";
-        div2.className = "hgroup";
-        div3.className = "header-meta";
-
-        var a1 = document.createElement('a');
-        a1.className = "item-block";
-        a1.href = "home-detail.html";
-
-        var header1 = document.createElement('header');
-        header1.id = "insertimg"; 
-
-        var h1 = document.createElement('h4');
-        h1.innerHTML = App.recentshome[0][1];
-
-        var h2 = document.createElement('h5');
-        h2.innerHTML = App.recentshome[0][2];
-        
-        var starSpan1 = document.createElement('span');
-        starSpan1.className = "fa fa-star checked";
-        var starSpan2 = document.createElement('span');
-        starSpan2.className = "fa fa-star checked";
-        var starSpan3 = document.createElement('span');
-        starSpan3.className = "fa fa-star checked";
-        var starSpan4 = document.createElement('span');
-        starSpan4.className = "fa fa-star checked";
-        var starSpan5 = document.createElement('span');
-        starSpan5.className = "fa fa-star unchecked";
-
-        var locatSpan = document.createElement('span');
-        locatSpan.className = "location";
-        var templot = App.recentshome[0][3].split(",",2);
-        locatSpan.innerHTML = templot;
-
-        var neoSpan = document.createElement('span');
-        neoSpan.className = "label label-warning";
-        neoSpan.innerHTML = "Negotiate";
-
-        var source = document.getElementById("jobitem");
-        source.appendChild(div1);
-        div1.appendChild(a1);
-        a1.appendChild(header1);
-        header1.appendChild(div2);
-        header1.appendChild(div3);
-        div2.appendChild(h1);
-        div2.appendChild(h2);
-        h1.appendChild(starSpan1);
-        h1.appendChild(starSpan2);
-        h1.appendChild(starSpan3);
-        h1.appendChild(starSpan4);
-        h1.appendChild(starSpan5);
-        div3.appendChild(locatSpan);
-        div3.appendChild(neoSpan);
-
-        var img = new Image();
-        img.src = App.recentshome[0].hyperlink;
-        var src = document.getElementById("insertimg");
-        src.appendChild(img);
+        var src = document.getElementById("jobitem");
+        var myvar = '<div class="col-xs-12">'+
+        '              <a class="item-block" href="home-detail.html">'+
+        '                <header>'+
+        '                  <img src='+ App.recentshome[0].hyperlink + ' alt="">'+
+        '                  <div class="hgroup">'+
+        '                    <h4>'+ App.recentshome[0][1] +''+
+        '                    	<span class="fa fa-star checked"></span>'+
+        '                    	<span class="fa fa-star checked"></span>'+
+        '                    	<span class="fa fa-star checked"></span>'+
+        '                    	<span class="fa fa-star checked"></span>'+
+        '                    	<span class="fa fa-star"></span>'+
+        '                    </h4>'+
+        '                    <h5>'+ App.recentshome[0][2] +'</h5>'+
+        '                  </div>'+
+        '                  <div class="header-meta">'+
+        '                    <span class="location">'+ App.recentshome[0][3].split(",",2) +'</span>'+
+        '                    <span class="label label-warning">negotiate</span>'+
+        '                  </div>'+
+        '                </header>'+
+        '              </a>'+
+        '            </div>';
+          
+        src.innerHTML = myvar;
 
       });
     });
